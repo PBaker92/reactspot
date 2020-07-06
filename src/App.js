@@ -78,15 +78,15 @@ function App() {
         <BrowserRouter>
           <header className="App Header">
             <h1>Spot</h1>
-            <ul className='Nav'>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/Search">Search</Link></li>
-            </ul>
           </header>
+          <ul className='Nav'>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/Search">Search</Link></li>
+          </ul>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/Search" exact component={Search} />
-            <Route path="">404 Not Found</Route>
+            <Route path="/Search" component={Search} />
+            <Route path="*">404 Not Found</Route>
           </Switch>
         </BrowserRouter>
       </div>
