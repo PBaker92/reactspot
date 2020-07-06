@@ -1,8 +1,8 @@
 import React, { useReducer, useState, useRef } from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import './App.css';
-import Search from "./components/Search";
+import Search from "./components/Search"
 import Home from "./components/Home"
 
 const machine = {
@@ -83,9 +83,11 @@ function App() {
               <li><Link to="/Search">Search</Link></li>
             </ul>
           </header>
-          <Route path="/" exact component={Home} />
-          <Route path="/Search" component={Search} />
-          <Route path="/">404 Not Found</Route>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/Search" component={Search} />
+            <Route path="">404 Not Found</Route>
+          </Switch>
         </BrowserRouter>
       </div>
 
@@ -94,7 +96,6 @@ function App() {
         <div className="image">
           {showImage && <img src={imageURL} alt="upload-preview" ref={imageRef} />}
           <div className="filebutton">
-
             <input type="file" accept="image/*" capture="camera" onChange={handleUpload} ref={inputRef} />
           </div>
         </div>

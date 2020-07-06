@@ -5,8 +5,8 @@ export default class Search extends Component {
         return (
             <div>
                 <div className="search">
-                    <p>Search below for more information about your breed</p>
-                    <div class="gcse-searchbox-only"> </div>
+                    <div class="gcse-searchbox"> </div>
+                    <div class="gcse-searchresults"></div>
                 </div>
             </div>
         )
