@@ -85,7 +85,7 @@ function App() {
           </header>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/Search" component={Search} />
+            <Route path="/Search" exact component={Search} />
             <Route path="">404 Not Found</Route>
           </Switch>
         </BrowserRouter>
