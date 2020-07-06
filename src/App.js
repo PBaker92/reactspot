@@ -84,7 +84,7 @@ function App() {
             <li><Link to="/Search">Search</Link></li>
           </ul>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" component={Home} />
             <Route path="/Search" component={Search} />
             <Route path="*">404 Not Found</Route>
           </Switch>
